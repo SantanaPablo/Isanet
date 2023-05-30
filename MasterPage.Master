@@ -1,0 +1,473 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="Isanet.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<style type="text/css">
+    .navbar {
+        background-color: #2a5298;
+    }
+
+    .footer {
+        background-color: #2a5298;
+    }
+
+    .navbar .navbar-brand {
+        color: #ecf0f1;
+    }
+
+        .navbar .navbar-brand:hover,
+        .navbar .navbar-brand:focus {
+            color: #ecdbff;
+        }
+
+    .navbar .navbar-text {
+        color: #ecf0f1;
+    }
+
+        .navbar .navbar-text a {
+            color: #ecdbff;
+        }
+
+            .navbar .navbar-text a:hover,
+            .navbar .navbar-text a:focus {
+                color: #ecdbff;
+            }
+
+    .navbar .navbar-nav .nav-link {
+        color: #ecf0f1;
+        border-radius: .25rem;
+        margin: 0 0.25em;
+    }
+
+        .navbar .navbar-nav .nav-link:not(.disabled):hover,
+        .navbar .navbar-nav .nav-link:not(.disabled):focus {
+            color: #ecdbff;
+        }
+
+    .navbar .navbar-nav .nav-item.active .nav-link,
+    .navbar .navbar-nav .nav-item.active .nav-link:hover,
+    .navbar .navbar-nav .nav-item.active .nav-link:focus,
+    .navbar .navbar-nav .nav-item.show .nav-link,
+    .navbar .navbar-nav .nav-item.show .nav-link:hover,
+    .navbar .navbar-nav .nav-item.show .nav-link:focus {
+        color: #ecdbff;
+        background-color: #0d2856;
+    }
+
+    .navbar .navbar-toggler {
+        border-color: #0d2856;
+    }
+
+        .navbar .navbar-toggler:hover,
+        .navbar .navbar-toggler:focus {
+            background-color: #0d2856;
+        }
+
+        .navbar .navbar-toggler .navbar-toggler-icon {
+            color: #ecf0f1;
+        }
+
+    .navbar .navbar-collapse,
+    .navbar .navbar-form {
+        border-color: #ecf0f1;
+    }
+
+    .navbar .navbar-link {
+        color: #ecf0f1;
+    }
+
+        .navbar .navbar-link:hover {
+            color: #ecdbff;
+        }
+
+    @media (max-width: 575px) {
+        .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+        }
+
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                color: #ecdbff;
+                background-color: #0d2856;
+            }
+    }
+
+    @media (max-width: 767px) {
+        .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+        }
+
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                color: #ecdbff;
+                background-color: #0d2856;
+            }
+    }
+
+    @media (max-width: 991px) {
+        .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+        }
+
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                color: #ecdbff;
+                background-color: #0d2856;
+            }
+    }
+
+    @media (max-width: 1199px) {
+        .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+            color: #ecf0f1;
+        }
+
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+                color: #ecdbff;
+            }
+
+            .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+                color: #ecdbff;
+                background-color: #0d2856;
+            }
+    }
+
+    .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #ecf0f1;
+    }
+
+        .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+        .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+            color: #ecdbff;
+        }
+
+        .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+            color: #ecdbff;
+            background-color: #0d2856;
+        }
+
+    .footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        
+    }
+
+    .social-media {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-media-icon {
+        display: inline-block;
+        margin: 20px;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+    }
+
+        .social-media-icon:hover {
+            background: #fff;
+            color: #176FA6;
+        }
+
+        .social-media-icon i {
+            font-size: 30px;
+            line-height: 60px;
+        }
+
+    .whatsapp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        z-index: 100;
+    }
+
+    .whatsapp-icon {
+        margin-top: 13px;
+    }
+
+    table.budget-calc {width: 100%; max-width: 600px; overflow: hidden; border-collapse: separate; border: 2px solid #fff; -webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px;}
+table.budget-calc th, table.budget-calc td {text-align: left; color: #333; border-bottom: 1px solid #fff; padding: 12px 15px 10px; font-size: 15px;}
+table.budget-calc thead th {background-color: #D0D0D0; font-size: 23px;  padding: 17px 14px 12px; color: #444; font-weight: normal;;}
+table.budget-calc tbody th {width: 55%; font-weight: normal; color: #111; background-color: #f8f8f8; vertical-align: top;}
+table.budget-calc tbody th small {display: block; margin-top: 4px; color: #999;}
+table.budget-calc tbody th.step {background-color: #2a5298; padding: 11px 14px 11px; font-size: 18px; color: #fff;}
+table.budget-calc tbody th.expense {background-color: #41e0dd; font-size: 16px; color: #fff; padding: 11px 14px 11px;}
+table.budget-calc tbody th.total {color: #9561a8;}
+table.budget-calc tbody td {width: 45%; background-color: #F0F0F0; vertical-align: top;}
+table.budget-calc tbody td input {display: inline-block; margin: -5px 0 0 2px; width: 80%;}
+table.budget-calc tbody td input.total {font-weight: bold; font-size: 15px; color: #000; border-color: #F0F0F0; background-color: #F0F0F0; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;}
+table.budget-calc tbody td input.total.negative {color: #FF0000;}
+table.budget-calc tbody td input.calc,
+table.carCostCalcTable tbody td input.calc,
+table.budget-calc tbody td input.clear-fields,
+table.carCostCalcTable tbody td input.clear-fields {width: auto; cursor: pointer; margin-top: 8px; display: block; background: url('../images/grad-white.png') 0 -26px repeat-x #2baaa7; font: normal 15px/15px 'PT Sans', Arial, sans-serif; text-shadow: 1px 1px 4px #2baaa7; color: #FFFFFF; text-decoration: none; border: 2px solid #2baaa7; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; padding: 5px 8px 6px; text-align: center;}	
+table.budget-calc tbody td input.clear-fields {text-shadow: 1px 1px 4px #999; background-color: #999; border-color: #999; font-size: 13px; line-height: 13px; margin-bottom: 3px;}
+table.carCostCalcTable tbody td input.calc,
+table.carCostCalcTable tbody td input.clear-fields {display: inline-block; width: 100px;}
+.carCal h2 {margin: 26px 0 5px 0 !important;}
+.carCostCalcTable .req {color: #FF0000; font-weight: bold; font-size: 20px; position: relative; margin-top: -4px;}
+.carCostCalcTable.alt {margin-bottom: -10px !important;}
+.carCostCalcTable.alt input {border: none; width: 80%; padding: 0 0 0 1px; line-height: inherit; font: normal 16px 'PT Sans', Arial, sans-seri; text-align: right; color: #000; background: transparent;}
+.carCostCalcTable.alt td {text-align: left;}
+.carCostCalcTable.alt .carFrstInpt,
+.carCostCalcTable.alt .carScndInpt {position: relative; vertical-align: top;}
+.carCostCalcTable.alt .carFrstInpt::before,
+.carCostCalcTable.alt .carScndInpt::before {content: '$'; position: absolute; top: 4px; left: 0;}
+.carCostCalcTable td input.percent {width: 50px !important; margin-left: 9px;} 
+.carCostCalcTable td input.percent,
+.carCostCalcTable td input.justnumber,
+.carCostCalcTable td select {margin-left: 9px;}
+.carCal .carCal textarea.carSummInpt {border: 0; height: auto; width: 100%; font: 16px 'PT Sans', Arial, sans-serif; color: #444; resize: none;}
+.carCal #errorMsg {color: red; background-color: #fcd7d3; padding: 10px; display: none;}
+.carCal #summaryCccc {background-color: #cffbae; padding: 10px; display: none;}
+@media only screen and (min-width: 480px) {
+table.carCostCalcTable tbody td input.calc {width: 160px;}
+.carCostCalcTable.alt td {border-top: 1px solid #ddd; padding-top: 6px; padding-bottom: 6px; vertical-align: top;}
+.carCostCalcTable td.carDscpt {width: 52%; font-size: 14px;}
+.carCostCalcTable td.carFrstInpt,
+.carCostCalcTable td.carScndInpt {width: 24%;}
+.carCostCalcTable td input[type="text"] {width: 80%; min-width: 50px; display: inline-block;}
+.carCostCalcTable td input.percent {width: 50px !important;}
+}
+table.carCostCalcTable tbody td input.clear-fields {text-shadow: 1px 1px 4px #999; background-color: #999; border-color: #999;}
+.pp-gallery {
+  min-height: 500px;
+  -moz-column-count: 3;
+           column-count: 3;
+}
+  .pp-gallery .card-columns .card {
+    border: none;
+    margin-bottom: 0;
+    border-radius: none; 
+  }
+  @media (max-width: 933px) {
+    .pp-gallery .card-columns {
+      -moz-column-count: 1;
+           column-count: 1; } }
+  @media (max-width: 576px) {
+    .pp-gallery .card-columns {
+      -moz-column-count: 1;
+           column-count: 1; } }
+  .pp-gallery .card figure {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 1%;
+    text-align: center; }
+  .pp-gallery .card figure img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    opacity: 1; }
+  .pp-gallery .card figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .pp-gallery .card figure figcaption,
+  .pp-gallery .card figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .pp-gallery .card figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0; }
+  .pp-gallery .card figure .h4 {
+    word-spacing: -0.15em;
+    font-weight: 600; }
+  .pp-gallery .card figure .h4,
+  .pp-gallery .card figure p {
+    margin: 0; }
+  .pp-gallery .card figure p {
+    letter-spacing: 1px;
+    font-size: 60%; }
+  .pp-gallery figure.pp-effect figcaption {
+    padding: 12px; }
+  .pp-gallery figure.pp-effect figcaption::before,
+  .pp-gallery figure.pp-effect figcaption::after {
+    position: absolute;
+    content: '';
+    opacity: 0; }
+  .pp-gallery figure.pp-effect figcaption::before {
+    top: 50px;
+    right: 30px;
+    bottom: 50px;
+    left: 30px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    transform: scale(0, 1);
+    transform-origin: 0 0; }
+  .pp-gallery figure.pp-effect figcaption::after {
+    top: 30px;
+    right: 50px;
+    bottom: 30px;
+    left: 50px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    transform: scale(1, 0);
+    transform-origin: 100% 0; }
+  .pp-gallery figure.pp-effect .h4 {
+    padding-top: 26%;
+    transition: transform 0.35s;
+    opacity: 0; }
+  .pp-gallery figure.pp-effect p {
+    padding: 0.5em 2em;
+    text-transform: none;
+    opacity: 0;
+    transform: translate3d(0, -10px, 0); }
+  .pp-gallery figure.pp-effect img,
+  .pp-gallery figure.pp-effect .h4 {
+    transform: translate3d(0, -25px, 0); }
+  .pp-gallery figure.pp-effect img,
+  .pp-gallery figure.pp-effect figcaption::before,
+  .pp-gallery figure.pp-effect figcaption::after,
+  .pp-gallery figure.pp-effect p {
+    transition: opacity 0.35s, transform 0.35s; }
+  .pp-gallery figure.pp-effect:hover img {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+  .pp-gallery figure.pp-effect:hover figcaption::before,
+  .pp-gallery figure.pp-effect:hover figcaption::after {
+    opacity: 1;
+    transform: scale(1); }
+  .pp-gallery figure.pp-effect:hover figcaption:before {
+    background: rgba(31, 30, 30, 0.5); }
+  .pp-gallery figure.pp-effect:hover .h4,
+  .pp-gallery figure.pp-effect:hover p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    color: #FFFFFF; }
+  .pp-gallery figure.pp-effect:hover figcaption::after,
+  .pp-gallery figure.pp-effect:hover .h4,
+  .pp-gallery figure.pp-effect:hover p,
+  .pp-gallery figure.pp-effect:hover img {
+    transition-delay: 0.15s; }
+  @media (max-width: 768px) and (min-width: 578px) {
+    .pp-gallery figure.pp-effect:hover .h4 {
+      padding-top: 20%;
+      font-size: 16px; } }
+  @media (max-width: 375px) {
+    .pp-gallery figure.pp-effect:hover .h4 {
+      padding-top: 20%;
+      font-size: 16px; } }
+</style>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-default">
+                <div class="container-fluid">
+
+                    <div class="col">
+                        <div class="container">
+                            <a href="~/" runat="server">
+                                <img src="img/isanetLogoWeb.png" />
+                            </a>
+                        </div>
+                        <div class="container">
+                            <p style="color: #fff">
+                                Suipacha - Provincia de Buenos Aires
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" runat="server" aria-current="page" href="~/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Trabajos.aspx">Trabajos Hechos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Presupuestos.aspx" runat="server">Presupuestos </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </nav>
+
+        </header>
+        <div style="background-image: url('img/isanetFondo.png')">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+            <p><a href="https://wa.me/+5492324617603/" class="whatsapp" target="_blank"><i class="fa fa-whatsapp whatsapp-icon"></i></a></p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/isanetpc" class="social-media-icon" target="_blank">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/isanet.pc/" class="social-media-icon" target="_blank">
+                        <i class="bx bxl-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/+5492324617603/" class="social-media-icon" target="_blank">
+                        <i class="bx bxl-whatsapp"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="color: #fff">&copy; <%: DateTime.Now.Year %> - Página hecha en ASP.NET</p>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</body>
+</html>
